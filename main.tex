@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{graphicx}
+
+\begin{document}
+
+\title{A NEW HASHING METHOD WITH APPLICATION FOR GAME PLAYING}
+\author{Albert L. Zobrist}
+\maketitle
+
+\begin{abstract}
+A general method of hash coding is described together with an application for
+programs which play board games such as checkers, chess, and GO. An auxiliary
+method which detects retrieval errors is proposed. The error rate can be
+precisely controlled depending upon how much space in the hash table is
+devotedto the auxiliary method.
+\end{abstract}
+
+\section*{Introduction}
+
+When a computer program stores an item in a large table, subsequent reference
+or retrieval of that item may necessitate a search of the table. This is so
+unless a table address for the item can be calculated in a systematic fashion
+from the item itself. A function which converts items into addresses is called a \underline{hashing algorithm}, and the resulting table a \underline{hash table}. The application of these functions is the subject of a small and specialized literature, but will soon be covered by Knuth\cite{knuth}.
+
+\begin{thebibliography}{9}
+\bibitem{knuth}
+Knuth, D. \underline{The Art of Computer Programming}, vol. 3 (to appear)
+\end{thebibliography}
+
+
+\end{document}
+
