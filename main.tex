@@ -16,7 +16,7 @@ A general method of hash coding is described together with an application for
 programs which play board games such as checkers, chess, and GO. An auxiliary
 method which detects retrieval errors is proposed. The error rate can be
 precisely controlled depending upon how much space in the hash table is
-devotedto the auxiliary method.
+devoted to the auxiliary method.
 \end{abstract}
 
 \section*{Introduction}
@@ -75,7 +75,8 @@ playing.
 
 \section*{Description of the method}
 
-The exclusive or (XOR) operation will be used. Assume the following properities for the XOR of a random sequence ($r_1$) of n-bit integers:
+The exclusive or (XOR) operation will be used. Assume the following properities
+for the XOR of a random sequence ($r_1$) of n-bit integers:
 
 \begin{itemize}
 \item[P1)] $r_i$ XOR $(r_j$ XOR $r_k) = (r_i$ XOR $r_j)$ XOR $r_k$
@@ -117,7 +118,8 @@ obtained. For example:
 \text{hash(CAT)} &= h_{3,1} \quad \text{XOR} \quad h_{1,2} \quad \text{XOR} \quad h_{20,3}
 \end{align*}
 
-Note that not all subsets of S correspond to legal English words or even to letter strings, e.g. $\{s_{1,1}, s_{2,1}\}$.
+Note that not all subsets of S correspond to legal English words or even to
+letter strings, e.g. $\{s_{1,1}, s_{2,1}\}$.
 
 \section*{The clustering of errors}
 
@@ -139,7 +141,8 @@ then
 
 Similar problems might occur for any application of XOR hash coding. The basic
 method depends upon the uniform distributuion of codes for the subsets of a
-finite set S. If two different subsets $S_1$ and $S_2$ have the same hash code, then for any subset $S_3$ disjoint from $S_1 \cup S_2$ we have
+finite set S. If two different subsets $S_1$ and $S_2$ have the same hash code,
+then for any subset $S_3$ disjoint from $S_1 \cup S_2$ we have
 
 \begin{align*}
 \text{hash}(S_1 \cup S_2) &= \text{hash}(S_2 \cup S_3) \\
@@ -151,7 +154,8 @@ and for any subset $S_4 \subset S_1 \cap S_2$ we have
 \text{hash}(S_1 - S_4) &= \text{hash}(S_2 - S_4) \\
 \end{align*}
 
-Hopefully, XOR hash coding will show advantages for some application which outweights its disadvantages.
+Hopefully, XOR hash coding will show advantages for some application which
+outweights its disadvantages.
 
 \section*{Application to game playing}
 
@@ -192,7 +196,9 @@ move or previous moves. In chess, a pawn is en passant only if it has just
 moved, and a king may castle with a root only if both pieces have not
 previously moved. In GO, certain captures are forbidden for one turn only. If
 such conditions are used in evaluation, then provisions can be made to
-incorporate them into the hash code. For example, four integers may be reserved for the four castling opportunities. When a castling opportunity is remove, its integer is XOR ed.
+incorporate them into the hash code. For example, four integers may be reserved
+for the four castling opportunities. When a castling opportunity is remove, its
+integer is XOR ed.
 
 If type 1 errors are to be reduced or eliminated, the it is necessary to store
 a key which is capable of detecting clashes. However, no description of the
@@ -218,13 +224,17 @@ it difficult to estimate the true probability that na error will affect the
 move decision. We shall assume that every type 1 error is a fatal error and
 estimate their probability for different key sizes.
 
-Suppose that the hash table has $2^n$ positions and that the keys have $n + m$ bits each. Suppose that during the move tree search, $2^n$ values were retrieved from the hash table with a probability
+Suppose that the hash table has $2^n$ positions and that the keys have $n + m$
+bits each. Suppose that during the move tree search, $2^n$ values were
+retrieved from the hash table with a probability
 
 \begin{align*}
 \frac{2^{n + m} - 1}{2^{n+m}}
 \end{align*}
 
-that each was correct. For an apporoximation we assume that these probabilities are independent (which is conservative in view of the clustering of errors) yielding the following probability that no errors occur:
+that each was correct. For an apporoximation we assume that these probabilities
+are independent (which is conservative in view of the clustering of errors)
+yielding the following probability that no errors occur:
 
 \begin{align*}
 \text{p(no errors)} = (1 - \frac{1}{2^{n+m}})^{2^n} = (\frac{1}{e})^{2^{-m}} \\
@@ -273,9 +283,11 @@ applications. Its specific application to game playing (where errors may be
 tolerated) shows the following advantages:
 
 \begin{itemize}
-\item[1)] It is easy to apply. For example, its implementation for checkers, chess, and GO are roughly the same.
+\item[1)] It is easy to apply. For example, its implementation for checkers,
+chess, and GO are roughly the same.
 \item[2)] It is fast.
-\item[3)] It enables precise control of the serious errors which result from the retrieval of wrong information from the hash table.
+\item[3)] It enables precise control of the serious errors which result from
+the retrieval of wrong information from the hash table.
 \item[4)] It allows choice of the size of keys used to control the errors in 3).
 \end{itemize}
 
@@ -292,7 +304,9 @@ This work was partially supported by NSF grant GJ583 and NIH grant MH12266.
 \bibitem{knuth}
 Knuth, D. \underline{The Art of Computer Programming}, vol. 3 (to appear)
 \bibitem{greenblatt}
-Greenblatt, R., D. Eastlake, and S. Crocker, The Greenblatt chess program, \underline{Proceedings Fall Joint Computer Conference}, Thompson, Washington D.C., vol. 31, Nov. 1967.
+Greenblatt, R., D. Eastlake, and S. Crocker, The Greenblatt chess program,
+\underline{Proceedings Fall Joint Computer Conference}, Thompson, Washington
+D.C., vol. 31, Nov. 1967.
 \end{thebibliography}
 \end{document}
 
