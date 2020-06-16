@@ -9,3 +9,5 @@ LaTeX transcription of [paper](http://research.cs.wisc.edu/techreports/1970/TR88
 > hash function: it is easy to compute. Moreover, it is easy to update after a
 > move of a single piece on the board. It is this last property which makes it
 > especially attractive for hashing board positions.
+
+[![](main-0.png)](main.pdf)
