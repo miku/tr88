@@ -10,4 +10,4 @@ LaTeX transcription of [paper](http://research.cs.wisc.edu/techreports/1970/TR88
 > move of a single piece on the board. It is this last property which makes it
 > especially attractive for hashing board positions.
 
-[![](main-0.png)](main.pdf)
+[![](vs.png)](main.pdf)
